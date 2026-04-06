@@ -36,8 +36,9 @@ Saat muncul lokasi file, tekan Enter untuk default:
 
 Aktifkan ssh-agent dan tambahkan key:
 
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+<pre><code>eval "$(ssh-agent -s)"</code></pre>
+
+<pre><code>ssh-add ~/.ssh/id_ed25519</code></pre>
 
 Tampilkan public key:
 
@@ -60,11 +61,11 @@ Jika berhasil biasanya muncul pesan sambutan dari GitHub.
 
 Contoh format clone:
 
-git clone git@github.com:USERNAME/NAMA-REPO.git
+<pre><codegit clone git@github.com:USERNAME/NAMA-REPO.git</code></pre>
 
 Masuk ke folder project:
 
-cd NAMA-REPO
+<pre><codecd NAMA-REPO</code></pre>
 
 Jika project sudah ada di server dan Anda hanya ingin update:
 
@@ -92,6 +93,7 @@ Install dependency:
 Jika ada error encoding pada req.txt, konversi dulu ke UTF-8:
 
 <pre><code>iconv -f UTF-16 -t UTF-8 req.txt -o req.txt</code></pre>
+
 <pre><code>pip install -r req.txt</code></pre>
 
 ## 7) Membuat File .env
@@ -136,8 +138,11 @@ Simpan file dan keluar dari editor.
 Jika sudah pernah clone:
 
 cd NAMA-REPO
+
 <pre><code>source venv/bin/activate</code></pre>
+
 <pre><code>git pull origin main</code></pre>
+
 <pre><code>pip install -r req.txt</code></pre>
 
 Selesai. Jika butuh, Anda bisa lanjut setup systemd + Nginx agar aplikasi auto-start dan berjalan stabil setelah reboot.
