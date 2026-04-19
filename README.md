@@ -61,11 +61,11 @@ Jika berhasil biasanya muncul pesan sambutan dari GitHub.
 
 Contoh format clone:
 
-<pre><codegit clone git@github.com:USERNAME/NAMA-REPO.git</code></pre>
+<pre><code>git clone git@github.com:kederjider/encryption.git</code></pre>
 
 Masuk ke folder project:
 
-<pre><codecd NAMA-REPO</code></pre>
+<pre><code>cd encryption</code></pre>
 
 Jika project sudah ada di server dan Anda hanya ingin update:
 
@@ -76,6 +76,7 @@ Jika project sudah ada di server dan Anda hanya ingin update:
 Di root project, jalankan:
 
 <pre><code>python3 -m venv venv</code></pre>
+
 source venv/bin/activate
 
 Setelah aktif, prompt terminal biasanya menampilkan (venv).
@@ -96,53 +97,21 @@ Jika ada error encoding pada req.txt, konversi dulu ke UTF-8:
 
 <pre><code>pip install -r req.txt</code></pre>
 
-## 7) Membuat File .env
-
-Aplikasi ini memakai variabel berikut:
-
-- BOT_TOKEN
-- CHAT_ID
-
-Buat file .env di root project:
-
-<pre><code>nano .env</code></pre>
-
-Isi dengan contoh berikut:
-
-BOT_TOKEN=isi_token_bot_telegram_kamu
-CHAT_ID=isi_chat_id_telegram_kamu
-
-Simpan file dan keluar dari editor.
-
 ## 8) Cara pakai
 
 **🔐 Encrypt file**
 
-<pre><code>python3 encrypt_file.py enc file.txt file.enc password123</code></pre>
+<pre><code>python3 key.py enc file.txt file.enc password123</code></pre>
 
 **🔓 Decrypt file**
 
-<pre><code>python3 encrypt_file.py dec file.enc file.txt password123</code></pre>
+<pre><code>python3 key.py dec file.enc file.txt password123</code></pre>
 
 **📁 Contoh real (backup VPS kamu)**
 
 <pre><code>tar -czf backup.tar.gz /var/www
-<pre><code>python encrypt_file.py enc backup.tar.gz backup.enc mypassword</code></pre>
+<pre><code>python key.py enc backup.tar.gz backup.enc mypassword</code></pre>
 
 **☁️ Upload ke Google Drive**
 
 ☁️ Upload ke Google Drive
-
-## 9) Update Kode dari GitHub
-
-Jika sudah pernah clone:
-
-cd NAMA-REPO
-
-<pre><code>source venv/bin/activate</code></pre>
-
-<pre><code>git pull origin main</code></pre>
-
-<pre><code>pip install -r req.txt</code></pre>
-
-Selesai. Jika butuh, Anda bisa lanjut setup systemd + Nginx agar aplikasi auto-start dan berjalan stabil setelah reboot.
